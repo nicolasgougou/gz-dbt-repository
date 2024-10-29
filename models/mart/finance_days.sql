@@ -1,6 +1,6 @@
 select
 int_orders_operational.date_date 
-,COUNT (raw_ship.orders_id) AS nb_transactions
+,COUNT (int_orders_operational.orders_id) AS nb_transactions
 ,ROUND(SUM (revenue)) AS total_revenue
 ,ROUND(SUM(revenue) / COUNT(orders_id)) AS average_basket
 ,ROUND(SUM (margin)) AS margin
