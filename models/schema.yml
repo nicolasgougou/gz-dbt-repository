@@ -135,3 +135,14 @@ sources:
           tests:
             - unique:
                 column_name: "(date_date || '_' || campaign_key)"
+models:
+  - name: int_campaigns_day
+    description: aggregated campaigns kpis by date
+    columns:
+      - name: date_date
+        description: date of campaign aggregated
+        tests:
+          - unique
+
+          
+      
