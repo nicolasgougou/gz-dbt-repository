@@ -143,6 +143,3 @@ models:
         description: date of campaign aggregated
         tests:
           - unique
-
-          
-      
