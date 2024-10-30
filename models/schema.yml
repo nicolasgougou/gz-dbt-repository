@@ -9,7 +9,7 @@ sources:
           description: products of Greenweez / On row per product-id and purchase_price
           columns:
             - name: products_id
-              description: Unique products_id
+              description: Unique products_id PRIMARY KEY
               tests:
                 - unique
                 - not_null
@@ -41,7 +41,7 @@ sources:
           description: shipping_fee, log_cost and ship_cost per orders_id
           columns:
             - name: orders_id
-              description: unique orders_id
+              description: unique orders_id / PRIMARY KEY
               tests:
                 - unique
                 - not_null
@@ -54,12 +54,84 @@ sources:
         - name: adwords
           identifier: raw_gz_adwords
           description: Kpis from adwords campaigns
+          columns:
+            - name: date_date
+              description: date of the campaign
+            - name: paid_source
+              description: source of the campaign
+            - name: campaign_key
+              description: id of the campaign
+            - name: campaign_name
+              description: name of the campaign
+            - name: ads_cost
+              description: cost of the campaign
+            - name: impression
+              description: nb of impressions
+            - name: click
+              description: number of clicks
+          tests:
+            - unique:
+                column_name: "(date_date || '_' || campaign_key)"
         - name: facebook
           identifier: raw_gz_facebook
           description: Kpis from facebook campaigns
+          columns:
+            - name: date_date
+              description: date of the campaign
+            - name: paid_source
+              description: source of the campaign
+            - name: campaign_key
+              description: id of the campaign
+            - name: campaign_name
+              description: name of the campaign
+            - name: ads_cost
+              description: cost of the campaign
+            - name: impression
+              description: nb of impressions
+            - name: click
+              description: number of clicks
+          tests:
+            - unique:
+                column_name: "(date_date || '_' || campaign_key)"
         - name: bing
           identifier: raw_gz_bing
           description: Kpis from bing campaigns
+          columns:
+            - name: date_date
+              description: date of the campaign
+            - name: paid_source
+              description: source of the campaign
+            - name: campaign_key
+              description: id of the campaign
+            - name: campaign_name
+              description: name of the campaign
+            - name: ads_cost
+              description: cost of the campaign
+            - name: impression
+              description: nb of impressions
+            - name: click
+              description: number of clicks
+          tests:
+            - unique:
+                column_name: "(date_date || '_' || campaign_key)"
         - name: criteo
           identifier: raw_gz_criteo
           description: Kpis from criteo campaigns
+          columns:
+            - name: date_date
+              description: date of the campaign
+            - name: paid_source
+              description: source of the campaign
+            - name: campaign_key
+              description: id of the campaign
+            - name: campaign_name
+              description: name of the campaign
+            - name: ads_cost
+              description: cost of the campaign
+            - name: impression
+              description: nb of impressions
+            - name: click
+              description: number of clicks
+          tests:
+            - unique:
+                column_name: "(date_date || '_' || campaign_key)"
