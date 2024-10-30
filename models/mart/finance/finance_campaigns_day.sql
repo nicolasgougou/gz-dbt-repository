@@ -14,7 +14,7 @@ date_date
 ,ROUND(SUM (total_logcost),2) as logcosts
 ,ROUND(SUM (ship_cost),2) as ship_costs
 FROM {{ ref('finance_days') }} AS finance
-JOIN {{ ref('int_campaigns_day') }} AS campaings
+LEFT JOIN {{ ref('int_campaigns_day') }} AS campaings
 USING (date_date)
 GROUP BY date_date
 ORDER BY date_date DESC
