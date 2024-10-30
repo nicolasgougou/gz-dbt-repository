@@ -8,6 +8,7 @@ int_orders_operational.date_date
 ,ROUND(SUM (purchase_cost)) AS total_purchase_cost 
 ,ROUND(SUM (shipping_fee)) AS total_shipping_fee
 ,ROUND(SUM (logcost)) AS total_logcost
+,ROUND(SUM(ship_cost)) AS ship_cost
 ,SUM (quantity) AS total_quantity_products_sold
 FROM {{ ref('int_orders_operational') }}
 GROUP BY date_date
